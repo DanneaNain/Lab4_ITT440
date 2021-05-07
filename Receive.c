@@ -23,7 +23,7 @@ int main(int argc, char*argv[])
   //Connect to remote server
 
   if (connect(socket_desc,(struct sockaddr*)&server, sizeof(server))<0)
-  {
+{
    puts("connect error");
    return 1;
   }
@@ -45,12 +45,12 @@ int main(int argc, char*argv[])
 
   if(recv(socket_desc,server_reply,2000,0)<0)
   {
-    puts("Received failed");
-    return 1;
-  }
+    puts("rcv failed");
+   
+}
 
     puts("Reply received\n");
-
+    puts(server_reply);
     return 0;
 
 }
